@@ -1,3 +1,4 @@
 .env
 .venv
 django_blog/posts.json
+django_blog/media/prfile_
