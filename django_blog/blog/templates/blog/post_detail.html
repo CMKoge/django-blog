@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{object.title}}</h1>
+<p>By <a href="{% url 'user_posts' object.author.username %}">{{object.author}}</a> on {{object.date | date:"d F Y"}}</p>
+{% if object.author == user %} <!--Validate if user is the user has authority-->
+<a href="{% url 'post_update' object.id%}">Update</a>
+<a href="{% url 'post_delete' object.id%}">Delete</a>
+{% endif %}
+<p>{{object.content}}</p>
+<img class="img-thumbnail" src="{{object.author.profile.image.url}}" alt="">
+{% endblock content %}

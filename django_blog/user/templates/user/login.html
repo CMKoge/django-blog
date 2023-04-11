@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Log In</button>
+    </form>
+    <a href="{% url 'register' %}">Not  a User?</a>
+    <a href="{% url 'password_reset' %}">Forget Password ?</a>
+</div>
+{% endblock content %}
